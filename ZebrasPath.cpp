@@ -25,17 +25,47 @@ void ZebrasPath::print(){
     cout<<row_num;
     row_num++;
     for (j=0;j<=7;j++){
-      
+      cout<<" ";
+      if(board[i][j]==-1)
+        cout<<".";
+      else if(board[i][j]==0)
+        cout<<"z";
+      else if(board[i][j]==steps)
+        cout<<"Z";
+      else
+        cout<<board[i][j];
     }
+    cout<<endl;
   }
 } 
 
 bool ZebrasPath::isValid(int r,int c){
-  
+  if(r>=0&&r<=7&&c>=0&&c<=7){
+    if(board[r][c]==-1){
+      if((r+3==R&&c+2==C)||(r+3==R&&c-2==C)||(r-3==R&&c+2==C)||(r-3==R&&c-2==C)||(r+2==R&&c+3==C)||(r+2==R&&c-3==C)||(r-2==R&&c+3==C)||(r-2==R&&c-3==C))
+        return true;
+      else
+        return false;
+    }
+    else
+      return false;
+  }
+  else
+    return false;
 }
 
 bool ZebrasPath::hasMoreMoves(){
-  
+  int num_of_movable_position=0;
+  for(int i=0;i<=7;i++){
+    for(int j=0;j<=7;j++){
+      if (board[i][j]==-1&&isValid(i,j)==true)
+        num_of_movable_position++;
+    }
+  }
+  if (num_of_movable_position!=0)
+    return true;
+  else
+    return false;
 }
 
 bool ZebrasPath::move(int r, int c){
