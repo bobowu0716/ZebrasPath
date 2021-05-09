@@ -7,12 +7,15 @@ int main(){
   bool startgame=false;
   bool endgame==false;
   while(startgame==false){
+    //Ask the user to enter the starting position.
     cout<<"Zebra's starting position (row col): ";
     cin>>startingrow>>startingcolumn;
+    //Determine whether the row and column that the player enter is in range 0-7. 
     if (startingrow>=0&&startingrow<=7&&startingcolumn>=0&&startingcolumn<=7){
       startgame=true;
     }
     else{
+      //If the row and column entered are not in the range ask user to enter again.
       cout<<"Invalid. Try again!\n";
     }
   }
