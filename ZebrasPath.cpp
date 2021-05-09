@@ -69,5 +69,13 @@ bool ZebrasPath::hasMoreMoves(){
 }
 
 bool ZebrasPath::move(int r, int c){
-  
+  if (board[r][c]==-1&&isValid(r,c)==true){
+    R=r;
+    C=c;
+    steps++;
+    board[r][c]=steps;
+    return true;
+  }
+  else
+    return false;
 }
