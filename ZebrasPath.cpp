@@ -1,8 +1,9 @@
 #include <iostream>
-#include "ZebrasPath"
+#include "ZebrasPath.h"
 using namespace std;
 
 ZebrasPath::ZebrasPath(int r,int c){
+  //Initialize the board with value -1 except the starting position with value 0.
   for(int i=0;i<=7;i++){
     for(int j=0;j<=7;j++){
       if(i==r&&j==c){
@@ -13,8 +14,9 @@ ZebrasPath::ZebrasPath(int r,int c){
       }
     }
   }
-  R=r;
-  C=c;
+  //Set the currentC, currentR and let the original step be 0.
+  currentR=r;
+  currentC=c;
   steps=0;
 }
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ZebrasPath"
+#include "ZebrasPath.h"
 using namespace std;
 
 int main(){
