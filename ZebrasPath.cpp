@@ -37,6 +37,7 @@ void ZebrasPath::print(){
     }
     cout<<endl;
   }
+  cout<<"Steps: "<<steps<<endl;
 } 
 
 bool ZebrasPath::isValid(int r,int c){
